@@ -13,7 +13,11 @@ namespace Colostate.Covid.Console
             System.Console.WriteLine("Hello World!");
             IColostateCovidClient covid = new ColostateCovidClient();
             ColostateCovidResourceModel data = await covid.Covid.GetCovidData();
+            DailyCovidData dailyData = await covid.Covid.GetMostRecentCovidReport();
             System.Console.WriteLine(data.details.Count);
+            System.Console.WriteLine(dailyData.ResultDate);
+            System.Console.WriteLine(dailyData.PositiveStudents);
+            System.Console.WriteLine(dailyData.PositiveStaff);
         }
     }
 }
