@@ -6,5 +6,6 @@ namespace Colostate.Covid.Interfaces
     public interface ICovid
     {
         Task<ColostateCovidResourceModel> GetCovidData();
+        Task<DailyCovidData> GetMostRecentCovidReport();
     }
 }
